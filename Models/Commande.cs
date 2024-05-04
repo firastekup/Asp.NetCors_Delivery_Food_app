@@ -10,6 +10,13 @@ namespace DeleveryApp.Models
         public int? IdLivreur { get; set; }
         public DateTime DateCommande { get; set; }
         public string Statut { get; set; }
+
+        // Nouvelle propriété pour l'ID de l'aliment sélectionné
+        [Display(Name = "Food")]
+        public int IdAliment { get; set; }
+
+        // Navigation property pour l'aliment sélectionné
+        public Food Food { get; set; }
     }
 
 }

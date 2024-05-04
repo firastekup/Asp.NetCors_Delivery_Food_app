@@ -4,50 +4,93 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My Delivery App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Adresse)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroTelephone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adresse)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroTelephone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdClient">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdClient">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdClient">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        .container {
+            padding-top: 50px;
+        }
+
+        .table {
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+            .table th, .table td {
+                border: none;
+                vertical-align: middle;
+            }
+
+            .table th {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+            .table td {
+                border-top: 1px solid #dee2e6;
+            }
+
+        .action-links a {
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+            .action-links a:hover {
+                color: #0056b3;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Client List</h1>
+        <p class="text-right">
+            <a class="btn btn-primary" href="@Url.Action("Create")">Create New</a>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nom</td>
+                            <td>@item.Adresse</td>
+                            <td>@item.NumeroTelephone</td>
+                            <td>@item.Email</td>
+                            <td class="action-links">
+                                <a href="@Url.Action("Edit", new { id = item.IdClient })">Edit</a>
+                                <a href="@Url.Action("Details", new { id = item.IdClient })">Details</a>
+                                <a href="@Url.Action("Delete", new { id = item.IdClient })">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js" integrity="sha384-SD0BfC5nYwV6H4kKD9hWjy4er/jTq5bKP1V8tSRbNiwHw5wuAR2+38xhKRvSKIzj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+Mm7QFi8aA4ZBEemI6Y/Y6TCFyY3yYyy3XpY2Kq0FfDip0k1hOeQiikyXr" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@model List<ApplicationUser>
+
+<h2>Liste des utilisateurs</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>FullName</th>
+            <!-- Ajoutez d'autres colonnes si nécessaire -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Email</td>
+                <td>@user.FullName</td>
+                <!-- Affichez d'autres propriétés de l'utilisateur si nécessaire -->
+            </tr>
+        }
+    </tbody>
+</table>

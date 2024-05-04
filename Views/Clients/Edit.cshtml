@@ -4,46 +4,81 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS styles */
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
 
-<h4>Client</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdClient" />
-            <div class="form-group">
-                <label asp-for="Nom" class="control-label"></label>
-                <input asp-for="Nom" class="form-control" />
-                <span asp-validation-for="Nom" class="text-danger"></span>
+        .container {
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            margin-top: 10px;
+        }
+
+        .validation-message {
+            color: red;
+        }
+
+        /* Custom table styles */
+        .table thead th {
+            background-color: #007bff; /* Blue header background */
+            color: #fff; /* White text color */
+        }
+
+        .table tbody td {
+            background-color: #fff; /* White background */
+            color: #333; /* Dark text color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Edit Client</h1>
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IdClient" />
+                    <div class="form-group">
+                        <label asp-for="Nom" class="control-label">Name:</label>
+                        <input asp-for="Nom" class="form-control" />
+                        <span asp-validation-for="Nom" class="validation-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Adresse" class="control-label">Address:</label>
+                        <input asp-for="Adresse" class="form-control" />
+                        <span asp-validation-for="Adresse" class="validation-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NumeroTelephone" class="control-label">Phone Number:</label>
+                        <input asp-for="NumeroTelephone" class="form-control" />
+                        <span asp-validation-for="NumeroTelephone" class="validation-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Email:</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="validation-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a asp-action="Index" class="btn btn-secondary btn-back">Back to List</a>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Adresse" class="control-label"></label>
-                <input asp-for="Adresse" class="form-control" />
-                <span asp-validation-for="Adresse" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NumeroTelephone" class="control-label"></label>
-                <input asp-for="NumeroTelephone" class="form-control" />
-                <span asp-validation-for="NumeroTelephone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</body>
+</html>

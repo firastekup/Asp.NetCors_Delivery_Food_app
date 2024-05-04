@@ -270,3 +270,4 @@ C:\.netProject\DeleveryApp\DeleveryApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\
 C:\.netProject\DeleveryApp\DeleveryApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\.netProject\DeleveryApp\DeleveryApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\.netProject\DeleveryApp\DeleveryApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\.netProject\DeleveryApp\DeleveryApp\obj\Debug\net8.0\DeleveryApp.sourcelink.json

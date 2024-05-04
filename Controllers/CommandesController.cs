@@ -24,6 +24,8 @@ namespace DeleveryApp.Controllers
         {
             return View(await _context.Commande.ToListAsync());
         }
+        //
+
 
         // GET: Commandes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -46,6 +48,7 @@ namespace DeleveryApp.Controllers
         // GET: Commandes/Create
         public IActionResult Create()
         {
+            ViewBag.FoodItems = new SelectList(_context.Food, "IdAliment", "Nom");
             return View();
         }
 

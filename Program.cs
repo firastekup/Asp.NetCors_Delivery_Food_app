@@ -37,7 +37,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Livreurs}/{action=Create}/{id?}");
+    pattern: "{controller=Account}/{action=ListUsers}/{id?}");
 app.MapRazorPages();
 
 app.Run();

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeleveryApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f73c697b2804d6ce7bfe3ffc65757aed4db3ca2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeleveryApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeleveryApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
